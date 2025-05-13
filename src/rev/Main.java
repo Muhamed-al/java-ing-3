@@ -3,11 +3,8 @@ package rev;
 public class Main {
 
 
-    public static void main (String[] args){
-
-        Personne p = new Personne("ahmed" , 22);
-        System.out.println(p.name);
-        System.out.println(p.age);
-
+    public static void main (String[] args) {
+        Persone p = new Persone(01 , "kjkk");
+        System.out.println(p);
     }
 }
