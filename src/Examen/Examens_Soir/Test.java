@@ -5,7 +5,7 @@ public class Test {
     public static void main(String[] args) {
 
         Emprunteur e1 = new Emprunteur("E001", "Jhon", "Doe");
-        Emprunteur e2 = new Emprunteur("E002", "xhmed", "Yassin");
+        Emprunteur e2 = new Emprunteur("E001", "Ahmed", "Yassin");
 
         Livre livre = new Livre("L001", "Java Programming", 2, 3, "2022");
         Rapport rapport = new Rapport("R001", "Mémoire IA", 1, "Mohamed", "Ali");
@@ -21,7 +21,8 @@ public class Test {
 
         biblio.afficherLesEmprunts();
 
+        System.out.println("Emprunteurs triés");
         biblio.emprunteursTries();
-
     }
+
 }

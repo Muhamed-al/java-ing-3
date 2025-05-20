@@ -1,21 +1,23 @@
 package Examen.Examens_Soir;
 
-public class Rapport extends Document {
-    private String presidentJury;
-    private String rapporteur;
+import java.util.Objects;
 
-    public Rapport(String code, String titre, int copiesDisponibles, String presidentJury, String rapporteur) {
-        super(code, titre, copiesDisponibles);
-        this.presidentJury = presidentJury;
+public class Rapport extends Document {
+    private String pres_juri;
+    private String rapporteur ;
+
+    public Rapport(String code, String titre, int nombre_de_copies_disponible, String pres_juri, String rapporteur) {
+        super(code, titre, nombre_de_copies_disponible);
+        this.pres_juri = pres_juri;
         this.rapporteur = rapporteur;
     }
 
-    public String getPresidentJury() {
-        return presidentJury;
+    public String getPres_juri() {
+        return pres_juri;
     }
 
-    public void setPresidentJury(String presidentJury) {
-        this.presidentJury = presidentJury;
+    public void setPres_juri(String pres_juri) {
+        this.pres_juri = pres_juri;
     }
 
     public String getRapporteur() {
@@ -28,8 +30,9 @@ public class Rapport extends Document {
 
     @Override
     public String toString() {
-        return super.toString() + ", Rapport [Président: " + presidentJury + ", Rapporteur: " + rapporteur + "]";
+        return pres_juri + rapporteur;
     }
+
 }
 
 

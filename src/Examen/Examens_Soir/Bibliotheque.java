@@ -9,58 +9,47 @@ import java.util.Collections;
 import java.util.*;
 
 public class Bibliotheque {
+    List<Document> documents ;
+    List<Emprunt> emprunts ;
 
-    List<Document> documents = new ArrayList<>();
-    List<Emprunt> emprunts = new ArrayList<>();
 
+    public Bibliotheque() {
+        this.documents = new ArrayList<>() ;
+        this.emprunts = new ArrayList<>();
+    }
     public void ajouterDocument(Document d){
-        documents.add(d);
+      documents.add(d);
     }
-
     public boolean rechercher(Document d){
-        return this.documents.contains(d);
+        return documents.contains(d);
     }
-
-    public boolean emprunter_livre(Emprunteur E, Document D){
-        if (D.getCopiesDisponibles() > 0){
-            emprunts.add(new Emprunt(D,E));
-            D.decrementerCopies();
+    public boolean emprunter_livre(Emprunteur e , Document d) {
+        if (d.getNombre_de_copies_disponible() > 0) {
+            Emprunt em = new Emprunt(d, e);
+            emprunts.add(em);
+            d.decrementer();
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
-    public  void afficherDocuments(){
-        // System.out.println(documents);
-        // OU BIEN
-        for (Document d : documents){
+    public void afficherDocuments(){
+       // System.out.println(documents);
+        for(Document d : documents){
             System.out.println(d);
         }
     }
-
     public void afficherLesEmprunts(){
-        System.out.println(emprunts);
-        // OU BIEN
-        for (Emprunt em : emprunts){
+        for(Emprunt em : emprunts){
             System.out.println(em);
         }
     }
-
-    public void afficherEmprunteur(){
-        for (Emprunt em : emprunts){
-            System.out.println(em.getEmprunteur());
+    public void emprunteursTries (){
+        List<String> noms = new ArrayList<>();
+        for(Emprunt em : emprunts) {
+            noms.add(em.getE().toString());
         }
+        Collections.sort(noms);
+        System.out.println(noms);
     }
-
-    public  void emprunteursTries(){
-        List<String> emprunteurs = new ArrayList<>();
-        for (Emprunt em : emprunts){
-            emprunteurs.add(em.getEmprunteur().toString());
-        }
-        Collections.sort(emprunteurs);
-        System.out.println(emprunteurs);
-    }
-
-
-
-
 }

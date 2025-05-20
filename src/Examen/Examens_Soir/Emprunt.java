@@ -1,33 +1,35 @@
 package Examen.Examens_Soir;
 
 public class Emprunt {
+    private Document d ;
+    private Emprunteur e ;
 
-    private Document document;
-    private Emprunteur emprunteur;
-
-    public Emprunt(Document document, Emprunteur emprunteur) {
-        this.document = document;
-        this.emprunteur = emprunteur;
+    public Emprunt(Document d, Emprunteur e) {
+        this.d = d;
+        this.e = e;
     }
 
-    public Document getDocument() {
-        return document;
+    public Document getD() {
+        return d;
     }
 
-    public void setDocument(Document document) {
-        this.document = document;
+    public void setD(Document d) {
+        this.d = d;
     }
 
-    public Emprunteur getEmprunteur() {
-        return emprunteur;
+    public Emprunteur getE() {
+        return e;
     }
 
-    public void setEmprunteur(Emprunteur emprunteur) {
-        this.emprunteur = emprunteur;
+    public void setE(Emprunteur e) {
+        this.e = e;
     }
 
     @Override
     public String toString() {
-        return emprunteur + "a emprunté " + document;
+        return "Emprunt{" +
+                "d=" + d +
+                ", e=" + e +
+                '}';
     }
 }

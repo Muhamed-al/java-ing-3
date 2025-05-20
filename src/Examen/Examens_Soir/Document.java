@@ -1,14 +1,14 @@
 package Examen.Examens_Soir;
 
-public abstract class Document {
-    protected String code;
-    protected String titre;
-    protected int copiesDisponibles;
+public class Document {
+    private String code;
+    private String titre;
+    private int nombre_de_copies_disponible;
 
-    public Document(String code, String titre, int copiesDisponibles) {
+    public Document(String code, String titre, int nombre_de_copies_disponible) {
         this.code = code;
         this.titre = titre;
-        this.copiesDisponibles = copiesDisponibles;
+        this.nombre_de_copies_disponible = nombre_de_copies_disponible;
     }
 
     public String getCode() {
@@ -27,21 +27,24 @@ public abstract class Document {
         this.titre = titre;
     }
 
-    public int getCopiesDisponibles() {
-        return copiesDisponibles;
+    public int getNombre_de_copies_disponible() {
+        return nombre_de_copies_disponible;
     }
 
-    public void setCopiesDisponibles(int copiesDisponibles) {
-        this.copiesDisponibles = copiesDisponibles;
+    public void setNombre_de_copies_disponible(int nombre_de_copies_disponible) {
+        this.nombre_de_copies_disponible = nombre_de_copies_disponible;
     }
-
-    public void decrementerCopies() {
-        copiesDisponibles--;
+    public void decrementer(){
+        this.nombre_de_copies_disponible -- ;
     }
 
     @Override
     public String toString() {
-        return "Document: " + titre + " (Code: " + code + ", Copies: " + copiesDisponibles + ")";
+        return "Document{" +
+                "code='" + code + '\'' +
+                ", titre='" + titre + '\'' +
+                ", nombre_de_copies_disponible=" + nombre_de_copies_disponible +
+                '}';
     }
 }
 

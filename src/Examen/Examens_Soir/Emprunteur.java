@@ -1,22 +1,22 @@
 package Examen.Examens_Soir;
 
 public class Emprunteur  {
-    private String id;
-    private String nom;
+    private String identifiant;
+    private String nom ;
     private String prenom;
 
-    public Emprunteur(String id, String nom, String prenom) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
+    public Emprunteur(String identifiant , String nom, String prenom){
+        this.identifiant=identifiant;
+        this.nom=nom;
+        this.prenom=prenom;
     }
 
-    public String getId() {
-        return id;
+    public String getIdentifiant() {
+        return identifiant;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdentifiant(String identifiant) {
+        this.identifiant = identifiant;
     }
 
     public String getNom() {
@@ -37,8 +37,11 @@ public class Emprunteur  {
 
     @Override
     public String toString() {
-        return "Emprunteur: " + nom + " " + prenom + " (ID: " + id + ")";
+        return "Emprunteur{" +
+                "identifiant='" + identifiant + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                '}';
     }
-
 }
 
