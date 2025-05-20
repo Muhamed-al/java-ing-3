@@ -30,7 +30,6 @@ public class Commune {
 
         return total;
     }
-
     public void afficher(){
         for (Habitation h : habitations){
             h.affiche();
